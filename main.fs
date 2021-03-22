@@ -5,10 +5,15 @@ type Tree =
     | Leaf of int
 
 let rec prod (t:Tree) :int =
-    0
-
+ 
+ match t with 
+  | Node(t1, t2) -> prod(t1)*prod(t2)
+  | Node(Leaf a, Leaf b) -> a * b
+  | Leaf a -> a
+  | _ -> 0
 let rec map (f:int->int) (t:Tree) :Tree =
-    t
+  match t with 
+
 
 let rec foldStr (nf:string -> string -> string) (lf:int->string) (t:Tree) :string =
     ""
